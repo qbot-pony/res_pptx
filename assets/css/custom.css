@@ -127,34 +127,37 @@
   font-weight: 600;
 }
 
-/* 装饰卡片：填补空白 */
-.visual-card {
-  background: var(--c-card-bg);
-  border-radius: 16px;
-  border: 1px solid var(--c-line);
-  overflow: hidden;
+/* 图片展示区域：去框化、锁定高度、顶部对齐 */
+.visual-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* 水平居中 */
+  justify-content: flex-start !important; /* 核心修改：靠顶对齐 */
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  padding-top: 0 !important; /* 确保没有额外内边距 */
 }
 
-.visual-card img {
+.visual-img {
   width: 100% !important;
-  height: auto !important;
-  max-height: 15rem !important;
+  height: 320px !important; /* 锁定高度 */
+  max-width: 100%;
   object-fit: cover !important;
-  margin: 0 !important;
-  opacity: 0.8;
+  border-radius: 8px !important;
+  opacity: 0.9;
+  margin: 0 auto !important;
+  display: block !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4); /* 轻微阴影增加质感 */
 }
 
-.visual-card .desc {
-  padding: 1.2rem;
-  font-size: 0.35em;
-  color: rgba(255,255,255,0.7);
-  background: rgba(0,0,0,0.4);
-  text-align: left;
-  line-height: 1.5;
+.visual-desc {
+  margin-top: 1.5rem !important; /* 预留文案间距 */
+  font-size: 0.38em !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-align: center !important;
+  line-height: 1.6 !important;
+  background: none !important; /* 彻底移除背景 */
+  padding: 0 !important;
 }
 
 /* 引导语 */
