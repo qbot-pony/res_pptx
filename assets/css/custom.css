@@ -9,13 +9,14 @@
 }
 
 .reveal {
-  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
   background-color: var(--c-bg-main);
   color: #e2e8f0;
 }
 
 /* 标题样式 */
-.reveal h1, .reveal h2 {
+.reveal h1,
+.reveal h2 {
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.02em;
@@ -29,7 +30,8 @@
 }
 
 /* 统一锁定 h1 和 h2 的起始锚点 */
-.reveal h1, .reveal h2 {
+.reveal h1,
+.reveal h2 {
   position: absolute !important;
   top: 50px !important;
   left: 0 !important;
@@ -41,7 +43,7 @@
 .reveal h1 {
   font-size: 1.6em !important;
   /* 确保 h1 的文字起始点与带边框的 h2 完美对齐 */
-  padding-left: 28px !important; 
+  padding-left: 28px !important;
   background: linear-gradient(135deg, #fff 0%, var(--c-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -64,7 +66,7 @@
 
 /* 锁定所有内容的起始位置 */
 .reveal .slides section {
-  padding-top: 180px !important; /* 预留出标题和副标题的空间 */
+  padding-top: 150px !important; /* 预留出标题和副标题的空间 */
   text-align: left !important;
   box-sizing: border-box;
   height: 100% !important;
@@ -72,6 +74,15 @@
   flex-direction: column !important;
   justify-content: flex-start !important;
   align-items: flex-start !important;
+}
+
+/* 底部固定空间伪元素 */
+.reveal .slides section::after {
+  content: '';
+  flex: 0 0 60px;
+  width: 100%;
+  order: 100; /* 确保在底部 */
+  margin-top: auto; /* 粘在底部 */
 }
 
 /* 多样化布局 */
@@ -103,21 +114,21 @@
   backdrop-filter: var(--glass);
   border: 1px solid var(--c-line);
   border-radius: 12px;
-  padding: 1.2em 1.5em 1.2em 2em; /* 缩减文字到边框的距离 */
+  padding: 1.2em 1.5em 1.2em 1.7em; /* 缩减文字到边框的距离 */
   margin: 0;
   list-style: none;
 }
 
 .reveal ul.content-list li {
   font-size: 0.5em; /* 微调字号 */
-  line-height: 1.5;
+  line-height: 1.7;
   margin-bottom: 0.8em;
   position: relative;
   text-align: left;
 }
 
 .reveal ul.content-list li::before {
-  content: "✦";
+  content: '✦';
   position: absolute;
   left: -1.1em;
   color: var(--c-primary);
@@ -146,7 +157,7 @@
   opacity: 0.9;
   margin: 0 auto !important;
   display: block !important;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4); /* 轻微阴影增加质感 */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* 轻微阴影增加质感 */
 }
 
 .visual-desc {
@@ -159,12 +170,20 @@
   padding: 0 !important;
 }
 
+/* 主要内容区域垂直居中 */
+.reveal .slides section .layout-container,
+.reveal .slides section .layout-grid-3 {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+
 /* 引导语 */
 .lead-quote {
   background: linear-gradient(90deg, rgba(79, 172, 254, 0.1), transparent);
   border-left: 4px solid var(--c-primary);
   padding: 12px 20px;
-  margin-bottom: 25px;
+  margin-bottom: auto; /* 粘在顶部 */
   text-align: left;
   font-size: 0.58em;
   color: #fff;
