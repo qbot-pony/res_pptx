@@ -77,8 +77,8 @@
 /* 多样化布局 */
 .layout-container {
   display: flex;
-  gap: 2rem;
-  align-items: stretch;
+  gap: 1.5rem; /* 缩减列间距 */
+  align-items: center !important; /* 核心修改：使图片与文本区块垂直居中对齐 */
   width: 100%;
 }
 
@@ -86,13 +86,15 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .layout-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.2rem;
   width: 100%;
+  align-items: center;
 }
 
 /* 内容组件 */
@@ -100,17 +102,16 @@
   background: var(--c-card-bg);
   backdrop-filter: var(--glass);
   border: 1px solid var(--c-line);
-  border-radius: 16px;
-  padding: 1.5em 2em 1.5em 2.5em;
+  border-radius: 12px;
+  padding: 1.2em 1.5em 1.2em 2em; /* 缩减文字到边框的距离 */
   margin: 0;
   list-style: none;
-  flex: 1;
 }
 
 .reveal ul.content-list li {
-  font-size: 0.52em;
-  line-height: 1.6;
-  margin-bottom: 1em;
+  font-size: 0.5em; /* 微调字号 */
+  line-height: 1.5;
+  margin-bottom: 0.8em;
   position: relative;
   text-align: left;
 }
@@ -118,7 +119,7 @@
 .reveal ul.content-list li::before {
   content: "✦";
   position: absolute;
-  left: -1.2em;
+  left: -1.1em;
   color: var(--c-primary);
 }
 
@@ -127,15 +128,13 @@
   font-weight: 600;
 }
 
-/* 图片展示区域：去框化、锁定高度、顶部对齐 */
+/* 图片展示区域：去框化、锁定高度、垂直居中 */
 .visual-wrap {
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important; /* 水平居中 */
-  justify-content: flex-start !important; /* 核心修改：靠顶对齐 */
-  flex: 1;
+  align-items: center !important;
+  justify-content: center !important; /* 内部居中 */
   width: 100%;
-  padding-top: 0 !important; /* 确保没有额外内边距 */
 }
 
 .visual-img {
