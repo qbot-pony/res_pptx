@@ -222,10 +222,10 @@
         hash: true,
         slideNumber: "c/t",
         progress: true,
-        center: true,
-        transition: "fade", // 更改为淡入淡出，最克制的切换效果
-        transitionSpeed: "fast", // 加快切换速度，减少等待感
-        backgroundTransition: "fade", // 背景也采用淡入淡出
+        center: false, // 核心改动：禁用垂直居中，交由 CSS 锁定顶部位置
+        transition: "fade",
+        transitionSpeed: "fast",
+        backgroundTransition: "fade",
         width: 1200,
         height: 800,
         margin: 0.1,
