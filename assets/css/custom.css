@@ -150,14 +150,18 @@
 
 .visual-img {
   width: 100% !important;
-  height: 320px !important; /* 锁定高度 */
+  /* 修改这里：去掉固定高度，改为自动 */
+  height: auto !important; 
+  /* 也可以设置一个最大高度防止图片过大 */
+  max-height: 320px; 
   max-width: 100%;
-  object-fit: cover !important;
+  /* 修改这里：使用 unset 或 scale-down */
+  object-fit: unset !important; 
   border-radius: 8px !important;
   opacity: 0.9;
   margin: 0 auto !important;
   display: block !important;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* 轻微阴影增加质感 */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .visual-desc {
